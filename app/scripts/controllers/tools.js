@@ -1,0 +1,17 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name webclientApp.controller:ToolsCtrl
+ * @description
+ * # ToolsCtrl
+ * Controller of the webclientApp
+ */
+angular.module('webclientApp')
+  .controller('ToolsCtrl', function ($scope) {
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+  });

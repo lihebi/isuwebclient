@@ -1,0 +1,46 @@
+<ol class="breadcrumb">
+  <li><a ng-href="#/tools">Tools</a></li>
+  <li class="active">User & Class Management</li>
+</ol>
+
+<a href class="btn">See All Users</a>
+<a href class="btn">See All Classes</a>
+<a href class="btn">Browse Users by Classes</a>
+<a href class="btn" ng-click="addClass()">Add New Classes</a>
+
+<!-- add class view -->
+<form class="form-horizontal" ng-show="addClassView" role="form">
+  <div class="form-group">
+    <label for="name" class="control-label col-sm-3">Class Name</label>
+    <!-- <input class="form-control" id="name" placeholder="Class Name"> -->
+    <div class="col-sm-9"><select class="form-control" id="name">
+      <option>Com S510</option>
+      <option>Com S511</option>
+      <option>Com S572</option>
+      <option>Com S592</option>
+      <option>Com S641</option>
+    </select>
+  </div></div>
+  <div class="form-group">
+    <label for="limit" class="control-label col-sm-3">Student Limits</label>
+    <div class="col-sm-9">
+      <input class="form-control" id="limit" type="number" name="limit">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="datefrom" class="control-label col-sm-3">Date</label>
+    <div class="col-sm-4">
+      <input type="date" class="form-control" id="datefrom" name="datefrom">
+    </div>
+    <label for="dateto" class="control-label col-sm-1">To</label>
+    <div class="col-sm-4">
+      <input type="date" class="form-control" id="dateto" name="dateto">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="sub" class="sr-only control-label col-sm-3">OK</label>
+    <div class="col-sm-9">
+      <button type="submit" id="sub" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+</form>
