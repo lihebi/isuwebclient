@@ -17,6 +17,11 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
+  .factory('dataService', function() {
+    var data = {};
+    data.navTab=0;
+    return data;
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

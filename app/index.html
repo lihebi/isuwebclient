@@ -22,7 +22,7 @@
   <!-- Add your site or application content here -->
   <div class="container">
     <div class="header" ng-controller="HeaderCtrl">
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar navbar-default" ng-controller="NavCtrl" role="navigation">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -36,12 +36,12 @@
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="navbar-collapse-1" ng-init="tab=1">
+          <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li ng-class="{active:tab===1}" ng-click="tab=1"><a ng-href="#/">Home</a></li>
-              <li ng-class="{active:tab===2}" ng-click="tab=2"><a ng-href="#/tools">Tools</a></li>
-              <li ng-class="{active:tab===3}" ng-click="tab=3"><a ng-href="#/settings">Settings</a></li>
-              <li ng-class="{active:tab===4}" ng-click="tab=4"><a ng-href="#/blog">Blog</a></li>
+              <li ng-class="{active:isSelected('Home')}" ng-click="setTab('Home')"><a ng-href="#/">Home</a></li>
+              <li ng-class="{active:isSelected('Tools')}" ng-click="setTab('Tools')"><a ng-href="#/tools">Tools</a></li>
+              <li ng-class="{active:isSelected('Settings')}" ng-click="setTab('Settings')"><a ng-href="#/settings">Settings</a></li>
+              <li ng-class="{active:isSelected('Blog')}" ng-click="setTab('Blog')"><a ng-href="#/blog">Blog</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li ng-class="{active:tab===5}" ng-click="tab=5"><a ng-href="#/account">John</a></li>
@@ -53,7 +53,7 @@
                   <li><a href="#">Term of Condition</a></li>
                   <li><a href="#">Feedback</a></li>
                   <li class="divider"></li>
-                  <li><a href="#">About</a></li>
+                  <li><a href="#/about">About</a></li>
                 </ul>
               </li>
             </ul>
@@ -124,6 +124,7 @@
   <script src="scripts/controllers/account.js"></script>
   <script src="scripts/controllers/management.js"></script>
   <script src="scripts/controllers/capture.js"></script>
+  <script src="scripts/controllers/nav.js"></script>
   <!-- endbuild -->
 </body>
 </html>
