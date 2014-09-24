@@ -20,6 +20,7 @@ angular
   .factory('dataService', function() {
     var data = {};
     data.navTab=0;
+    data.isLoggedIn=false;
     return data;
   })
   .config(function ($routeProvider) {
@@ -55,6 +56,14 @@ angular
       .when('/tools/capture', {
         templateUrl: 'views/capture.html',
         controller: 'CaptureCtrl'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+      })
+      .when('/signup', {
+        templateUrl: 'views/signup.html',
+        controller: 'SignupCtrl'
       })
       .otherwise({
         redirectTo: '/'
