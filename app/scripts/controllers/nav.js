@@ -8,17 +8,19 @@
  * Controller of the webclientApp
  */
 angular.module('webclientApp')
-  .controller('NavCtrl', function ($scope, dataService) {
+  .controller('NavCtrl', function ($scope, data, session) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
     $scope.setTab = function(tab) {
-      dataService.nav = tab;
+      // dataService.nav = tab;
+      data.setNav(tab);
     };
     $scope.isSelected = function(tab) {
-      return (dataService.nav === tab);
+      return (data.getNav() === tab);
     };
-    $scope.isLoggedIn = dataService.isLoggedIn;
+    $scope.isLoggedIn = session.isLoggedIn;
+    $scope.user = session.who();
   });

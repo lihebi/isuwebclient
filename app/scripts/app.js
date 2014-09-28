@@ -17,44 +17,44 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .factory('dataService', function($resource) {
-    var data = {};
-    data.nav='Home';
-    data.isLoggedIn=false;
-    data.session={};
-
-    data.User = $resource('http://api.hebihacker.info/users/:userId', {
-      userId: '@id'
-    }, {
-      save: {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
-      }
-    });
-
-    return data;
-  })
-  .factory('flash', function($rootScope) {
-    var queue = [];
-    var currentMessage = '';
-    $rootScope.$on('$routeChangeSuccess', function() {
-      currentMessage = queue.shift() || '';
-    });
-    return {
-      setMessage: function(message) {
-        queue.push(message);
-        currentMessage = queue.shift();
-      },
-      getMessage: function() {
-        return currentMessage;
-      },
-      nextMessage: function() {
-        currentMessage = queue.shift();
-      }
-    };
-  })
+  // .factory('dataService', function($resource) {
+  //   var data = {};
+  //   data.nav='Home';
+  //   data.isLoggedIn=false;
+  //   data.session={};
+  //
+  //   data.User = $resource('http://api.hebihacker.info/users/:userId', {
+  //     userId: '@id'
+  //   }, {
+  //     save: {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+  //       }
+  //     }
+  //   });
+  //
+  //   return data;
+  // })
+  // .factory('flash', function($rootScope) {
+  //   var queue = [];
+  //   var currentMessage = '';
+  //   $rootScope.$on('$routeChangeSuccess', function() {
+  //     currentMessage = queue.shift() || '';
+  //   });
+  //   return {
+  //     setMessage: function(message) {
+  //       queue.push(message);
+  //       currentMessage = queue.shift();
+  //     },
+  //     getMessage: function() {
+  //       return currentMessage;
+  //     },
+  //     nextMessage: function() {
+  //       currentMessage = queue.shift();
+  //     }
+  //   };
+  // })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

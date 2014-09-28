@@ -44,7 +44,7 @@
               <li ng-class="{active:isSelected('Blog')}" ng-click="setTab('Blog')"><a ng-href="#/blog">Blog</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li ng-show="isLoggedIn" ng-class="{active:isSelected('Account')}" ng-click="setTab('Account')"><a ng-href="#/account">{{name}}</a></li>
+              <li ng-show="isLoggedIn" ng-class="{active:isSelected('Account')}" ng-click="setTab('Account')"><a ng-href="#/account">{{who.first}}</a></li>
               <li ng-show="isLoggedIn"><a href="#">Logout</a></li>
               <li ng-hide="isLoggedIn" ng-class="{active:isSelected('Login')}" ng-click="setTab('Login')"><a href="#/login">Login</a></li>
               <li ng-hide="isLoggedIn" ng-class="{active:isSelected('Signup')}" ng-click="setTab('Signup')"><a href="#/signup">Sign Up</a></li>
@@ -139,6 +139,9 @@
   <script src="scripts/controllers/login.js"></script>
   <script src="scripts/controllers/signup.js"></script>
   <script src="scripts/controllers/msg.js"></script>
+  <script src="scripts/services/session.js"></script>
+  <script src="scripts/services/data.js"></script>
+  <script src="scripts/services/flash.js"></script>
   <!-- endbuild -->
 </body>
 </html>
