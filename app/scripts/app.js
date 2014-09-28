@@ -22,7 +22,6 @@ angular
     data.nav='Home';
     data.isLoggedIn=false;
     data.session={};
-    data.message='';
 
     data.User = $resource('http://api.hebihacker.info/users/:userId', {
       userId: '@id'
@@ -36,6 +35,25 @@ angular
     });
 
     return data;
+  })
+  .factory('flash', function($rootScope) {
+    var queue = [];
+    var currentMessage = '';
+    $rootScope.$on('$routeChangeSuccess', function() {
+      currentMessage = queue.shift() || '';
+    });
+    return {
+      setMessage: function(message) {
+        queue.push(message);
+        currentMessage = queue.shift();
+      },
+      getMessage: function() {
+        return currentMessage;
+      },
+      nextMessage: function() {
+        currentMessage = queue.shift();
+      }
+    };
   })
   .config(function ($routeProvider) {
     $routeProvider

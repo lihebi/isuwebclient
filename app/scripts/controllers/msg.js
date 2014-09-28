@@ -2,18 +2,17 @@
 
 /**
  * @ngdoc function
- * @name webclientApp.controller:BlogCtrl
+ * @name webclientApp.controller:MsgCtrl
  * @description
- * # BlogCtrl
+ * # MsgCtrl
  * Controller of the webclientApp
  */
 angular.module('webclientApp')
-  .controller('BlogCtrl', function ($scope, dataService, flash) {
+  .controller('MsgCtrl', function ($scope, flash) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-    // dataService.msg = 'Blog page';
-    // flash.setMessage('blog');
+    $scope.flash = flash;
   });
