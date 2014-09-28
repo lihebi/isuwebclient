@@ -8,7 +8,7 @@
  * Controller of the webclientApp
  */
 angular.module('webclientApp')
-  .controller('BlogCtrl', function ($scope, flash, session, data) {
+  .controller('BlogCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

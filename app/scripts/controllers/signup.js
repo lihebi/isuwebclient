@@ -8,7 +8,7 @@
  * Controller of the webclientApp
  */
 angular.module('webclientApp')
-  .controller('SignupCtrl', function ($scope, $http, dataService) {
+  .controller('SignupCtrl', function ($scope, $http, data) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -22,11 +22,12 @@ angular.module('webclientApp')
         last: $scope.last,
         password: $scope.password1
       };
-      dataService.User.save({}, user, function(res) {
-        dataService.isLoggedIn=true;
-        dataService.session = user;
-      }, function(res) {
-        dataService.msg='http error while signup';
+      data.User.save({}, user, function(res) {
+        // session.login(res);
+        console.log(res);
+      }, function(err) {
+        // dataService.msg='http error while signup';
+        console.log(err);
       });
       // $http({
       //               method  : 'POST',
