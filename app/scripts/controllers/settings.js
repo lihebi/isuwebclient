@@ -8,7 +8,7 @@
  * Controller of the webclientApp
  */
 angular.module('webclientApp')
-  .controller('SettingsCtrl', function ($scope, $location, session) {
+  .controller('SettingsCtrl', function ($scope, $location, session, data) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -16,5 +16,6 @@ angular.module('webclientApp')
     ];
     if (!session.isLoggedIn) {
       $location.path('/login');
+      data.setNav('Login');
     }
   });
