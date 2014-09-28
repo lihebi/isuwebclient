@@ -17,10 +17,24 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .factory('dataService', function() {
+  .factory('dataService', function($resource) {
     var data = {};
     data.nav='Home';
     data.isLoggedIn=false;
+    data.session={};
+    data.message='';
+
+    data.User = $resource('http://api.hebihacker.info/users/:userId', {
+      userId: '@id'
+    }, {
+      save: {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        }
+      }
+    });
+
     return data;
   })
   .config(function ($routeProvider) {
