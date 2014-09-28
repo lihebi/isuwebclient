@@ -19,6 +19,6 @@ angular.module('webclientApp')
     };
     $scope.isSelected = function(tab) {
       return (dataService.nav === tab);
-    }
+    };
     $scope.isLoggedIn = dataService.isLoggedIn;
   });

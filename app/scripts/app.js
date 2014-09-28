@@ -19,7 +19,7 @@ angular
   ])
   .factory('dataService', function() {
     var data = {};
-    data.navTab=0;
+    data.nav='Home';
     data.isLoggedIn=false;
     return data;
   })
