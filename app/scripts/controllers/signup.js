@@ -22,7 +22,7 @@ angular.module('webclientApp')
         last: $scope.last,
         password: $scope.password1
       };
-      data.User.save({}, user, function(res) {
+      data.User.save({}, $.param(user), function(res) {
         // session.login(res);
         console.log(res);
       }, function(err) {

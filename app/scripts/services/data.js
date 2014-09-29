@@ -13,7 +13,7 @@ angular.module('webclientApp')
     // ...
 
     var nav='Home';
-    var User = $resource('http://api.hebihacker.info/users/:userId', {
+    var User = $resource('http://127.0.0.1:12345/users/:userId', {
       userId: '@id'
     }, {
       save: {
