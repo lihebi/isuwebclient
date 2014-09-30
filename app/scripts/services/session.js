@@ -14,7 +14,7 @@ angular.module('webclientApp')
 
     var meaningOfLife = 42;
     var user = {};
-    var isLoggedIn = false;
+    var status = false;
 
     // Public API here
     return {
@@ -23,14 +23,17 @@ angular.module('webclientApp')
       },
       login: function(u) {
         user = u;
-        isLoggedIn = true;
+        status = true;
       },
       who: function() {
         return user;
       },
       logout: function() {
         user={};
-        isLoggedIn = false;
+        status = false;
+      },
+      isLoggedIn: function() {
+        return status;
       }
     };
   });

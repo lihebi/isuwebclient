@@ -22,5 +22,6 @@ angular.module('webclientApp')
       return (data.getNav() === tab);
     };
     $scope.isLoggedIn = session.isLoggedIn;
-    $scope.user = session.who();
+    $scope.who = session.who;
+    $scope.logout = session.logout;
   });
