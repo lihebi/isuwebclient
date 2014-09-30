@@ -55,7 +55,9 @@ angular
   //     }
   //   };
   // })
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $httpProvider) {
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+    // $httpProvider.defaults.headers.get['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -96,6 +98,10 @@ angular
       .when('/signup', {
         templateUrl: 'views/signup.html',
         controller: 'SignupCtrl'
+      })
+      .when('/tools/stat', {
+        templateUrl: 'views/stat.html',
+        controller: 'StatCtrl'
       })
       .otherwise({
         redirectTo: '/'

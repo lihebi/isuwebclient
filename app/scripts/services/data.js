@@ -13,16 +13,19 @@ angular.module('webclientApp')
     // ...
 
     var nav='Home';
-    var User = $resource('http://127.0.0.1:12345/users/:userId', {
-      userId: '@id'
-    }, {
-      save: {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
-      }
-    });
+    var api = 'http://0.0.0.0:12345';
+    // var User = $resource(api+'/users/:userId', {
+    //   userId: '@id'
+    // }, {
+    //   all: {
+    //     // method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+    //     }
+    //   }
+    // });
+    var User = $resource(api+'/users/:userId');
+    var Class = $resource(api+'/classes/:classId');
 
     // Public API here
     return {
