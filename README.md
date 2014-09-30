@@ -13,3 +13,7 @@ npm install
 bower install
 grunt serve
 ```
+
+# TODOs
+
+* auto breadcrumbs

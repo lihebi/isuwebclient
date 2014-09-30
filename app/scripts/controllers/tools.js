@@ -14,7 +14,7 @@ angular.module('webclientApp')
       'AngularJS',
       'Karma'
     ];
-    if (!session.isLoggedIn) {
+    if (!session.isLoggedIn()) {
       $location.path('/login');
       data.setNav('Login');
     }
