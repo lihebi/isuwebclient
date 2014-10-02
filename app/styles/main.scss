@@ -91,3 +91,22 @@ body {
     border-bottom: 0;
   }
 }
+
+#resultcontainer {
+  position:relative;
+  #photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  #result {
+    z-index: 100;
+    position: absolute;
+    i {
+      position: absolute;
+      color: red;
+      font-weight: bold;
+      font-size: 30px;
+    }
+  }
+}

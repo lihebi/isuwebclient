@@ -19,6 +19,7 @@ angular.module('webclientApp')
     ];
     var video = document.querySelector('video');
     var canvas = document.querySelector('canvas');
+    var result = document.querySelector('result');
     var start = function() {
       // TODO how to turn off the camera when user click another page
       navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
@@ -49,6 +50,15 @@ angular.module('webclientApp')
       document.querySelector('#photo').src = canvas.toDataURL('image/webp');
     };
     var send = function() {
+      var locs = [
+        {name: "John", x: 56, y: 89},
+        {name: "Alice", x: 320, y: 220},
+        {name: "Cindy", x: 123, y: 310},
+        {name: "Bob", x: 440, y: 210},
+        {name: "Kevin", x: 530, y: 87},
+        {name: "Sally", x: 56, y: 280}
+      ];
+      $scope.locs = locs;
     };
     var change = function() {
     };

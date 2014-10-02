@@ -15,5 +15,15 @@
   <button class="btn btn-warning pull-right" ng-click="test()">Test</button>
 </div>
 
-<img id='photo' src=''>
-</img>
+<p>Location Data Example</p>
+<p>{{locs}}</p>
+
+<div>
+  <div id="resultcontainer">
+    <img id='photo' src=''>
+    </img>
+    <div id='result' >
+      <i ng-repeat="loc in locs" ng-style="{top: loc.y, left: loc.x}">{{loc.name}}</i>
+    </div>
+  </div>
+</div>
