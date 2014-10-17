@@ -9,7 +9,7 @@
  * Controller of the webclientApp
  */
 angular.module('webclientApp')
-  .controller('SignupCtrl', function ($scope, $http, data) {
+  .controller('SignupCtrl', function ($scope, $http, data, flash) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -29,6 +29,7 @@ angular.module('webclientApp')
       }, function(err) {
         // dataService.msg='http error while signup';
         console.log(err);
+        flash.setMessage('Http Error');
       });
       // $http({
       //               method  : 'POST',
